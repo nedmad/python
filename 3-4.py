@@ -33,16 +33,19 @@ def num_pagina():
     else:
         if(paginas >= 20 and paginas < 200):
             valor_disc = 15 / 100 #15% de disconto
+            return False #Retorna False para quebrar o loop, assim serve o mesmo para outras condições seguintes
         elif(paginas >= 200 and paginas < 2000):
             valor_disc = 20 / 100 #20% de disconto
+            return False
         elif(paginas >= 2000 and paginas < 20000):
             valor_disc = 25 / 100 #20% de desconto
+            return False
         elif(paginas > 20000):#Limite de páginas abaixo de 20000
             print("Não aceitamos tantas páginas de uma vez")
             print("Por favor, entre com o número de páginas novamente\n")
-            return True
+            return True #Retorna True para continuar com o loop
         else:
-            return True
+            return False
 
 def servico_extra():
     global extra
